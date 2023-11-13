@@ -5,6 +5,7 @@ import { Categoria } from "../domain/categoria/categoria.entity";
 import { CategoriaMap } from "./categoria.map";
 import { StatusProdutoPrisma } from "@prisma/client";
 
+
 class ProdutoMap {
 
     public static toDTO(produto: Produto): IProduto {
