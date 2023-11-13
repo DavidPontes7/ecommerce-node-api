@@ -1,4 +1,4 @@
-import { CategoriaMap } from "@modules/catalogo/infra/mappers/categoria.map";
+import { CategoriaMap } from "@modules/catalogo/mappers/categoria.map";
 import { Entity } from "@shared/domain/entity";
 import { CategoriaExceptions } from "./categoria.exception";
 import { CriarCategoriaProps, ICategoria, RecuperarCategoriaProps } from "./categoria.types";
