@@ -4,23 +4,27 @@ import { ICategoria } from "@modules/catalogo/domain/categoria/categoria.types";
 import { IUseCase } from "@shared/application/use-case.interface";
 import { CategoriaApplicationExceptions } from "../../exceptions/categoria.application.exception";
 import { CategoriaMap } from "@modules/catalogo/mappers/categoria.map";
-class RecuperarTodasCategoriasUseCase implements IUseCase<void, Array<ICategoria>> {
+
+class RecuperarCategoriaPorIdUseCase implements IUseCase<string, ICategoria> {
     private _categoriaRepositorio: ICategoriaRepository<Categoria>;
  
     constructor(repositorio: ICategoriaRepository<Categoria>) {
       this._categoriaRepositorio = repositorio;
     }
  
-    async execute(): Promise<Array<ICategoria>> {
+    async execute(uuid: string): Promise<ICategoria> {
 
-        const todasCategorias: Array<Categoria> = await this._categoriaRepositorio.recuperarTodos();
+        const existeCategoria:boolean = await this._categoriaRepositorio.existe(uuid);
 
-        const todasCategoriasDTO = todasCategorias.map(
-            (categoria) => CategoriaMap.toDTO(categoria)
-        );
+        if (!existeCategoria){
+            throw new CategoriaApplicationExceptions.CategoriaNaoEncontrada();
+        }
 
-        return todasCategoriasDTO;
+        const categoria = await this._categoriaRepositorio.recuperarPorUuid(uuid);
+
+        return CategoriaMap.toDTO(categoria as Categoria);
+
     }
 }
 
-export { RecuperarTodasCategoriasUseCase };
+export { RecuperarCategoriaPorIdUseCase };

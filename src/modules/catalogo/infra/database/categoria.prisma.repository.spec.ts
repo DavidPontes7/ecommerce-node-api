@@ -4,7 +4,7 @@ import { DeepMockProxy, mockDeep, mockReset } from 'vitest-mock-extended';
 import { CategoriaPrismaRepository } from "./categoria.prisma.repository";
 import { faker } from "@faker-js/faker";
 import { Categoria } from "@modules/catalogo/domain/categoria/categoria.entity";
-import { CategoriaMap } from "../mappers/categoria.map";
+import { CategoriaMap } from "@modules/catalogo/mappers/categoria.map";
 
 const prismaMock: DeepMockProxy<PrismaClient> = mockDeep<PrismaClient>();
 let categoriaRepositorio: CategoriaPrismaRepository;
