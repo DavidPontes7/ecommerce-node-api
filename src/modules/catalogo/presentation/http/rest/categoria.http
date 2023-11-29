@@ -1,0 +1,17 @@
+@host = localhost
+@port = 3000
+@apiversion = api/v1
+
+### Recuperar Um Categoria por ID
+GET http://{{host}}:{{port}}/{{apiversion}}/categorias/4f8f367d-c4dc-4941-85e2-f3afcf9c77bb
+
+### Recuperar Todas as Categorias
+GET http://{{host}}:{{port}}/{{apiversion}}/categorias
+
+### Inserir Uma Categoria
+POST http://{{host}}:{{port}}/{{apiversion}}/categorias
+Content-type: application/json
+
+{
+    "nome":"Cozinha"
+}

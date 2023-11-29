@@ -1,5 +1,5 @@
 import { categoriaRepositorio, produtoRepositorio } from "@modules/catalogo/infra/database";
-import { RecuperarCategoriaPorIdUseCase } from "@shared/application/use-case/recuperar-categoria-por-id/recuperar-categoria-por-id.use-case";
+import { RecuperarCategoriaPorIdUseCase } from "./recuperar-categoria-por-id/recuperar-categoria-por-id.use-case";
 import { RecuperarTodasCategoriasUseCase } from "./recuperar-todas-categorias/recuperar-todas-categorias.use-case";
 import { InserirCategoriaUseCase } from "./inserir-categoria/inserir-categoria.use-case";
 import { AtualizarCategoriaUseCase } from "./atualizar-categoria/atualizar-categoria.use-case";
