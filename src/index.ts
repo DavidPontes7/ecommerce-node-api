@@ -58,15 +58,15 @@ async function main() {
     //Recuperar Produto por UUID//
     ////////////////////////////////
        
-    console.log(await recuperarProdutoPorIdUseCase.execute("737f111b-eba1-457f-9552-5b5f28511d5d"));
+   /* console.log(await recuperarProdutoPorIdUseCase.execute("737f111b-eba1-457f-9552-5b5f28511d5d")); */
 
     ///////////////////
     //Inserir Produto//
     ///////////////////
-    /*
+    
    
     const categoria01: Categoria = Categoria.recuperar({
-        id: "03f890b0-684a-44ba-a887-170e26bb2cd2",
+        id: "4198ab9b-3f4e-41fb-a553-541708b31b17",
         nome: 'Cozinha'
     });    
 
@@ -85,7 +85,7 @@ async function main() {
     const produtoInserido = await produtoRepo.inserir(produto);
 
     console.log(produtoInserido);
-    */
+    
 
    
 
