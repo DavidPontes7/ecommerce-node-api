@@ -15,7 +15,7 @@ class RecuperarTodosProdutosUseCase implements IUseCase<void, Array<IProduto>> {
         const todosProdutos: Array<Produto> = await this._produtoRepositorio.recuperarTodos();
 
         const todosProdutosDTO = todosProdutos.map(
-            (produtos) => ProdutoMap.toDTO(produtos)
+            (produto) => ProdutoMap.toDTO(produto)
         );
 
         return todosProdutosDTO;
