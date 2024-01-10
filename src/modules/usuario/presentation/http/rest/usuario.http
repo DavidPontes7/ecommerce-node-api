@@ -1,0 +1,34 @@
+@host = localhost
+@port = 3000
+@apiversion = api/v1
+
+### Registrar Um Novo Usuário
+POST http://{{host}}:{{port}}/{{apiversion}}/usuarios
+Content-type: application/json
+
+{
+    "nome":"Maria",
+    "email":"maria@gmail.com",
+    "senha":"123456",
+    "tipo": "CLIENTE"
+}
+
+### Registrar Um Novo Administrador
+POST http://{{host}}:{{port}}/{{apiversion}}/usuarios
+Content-type: application/json
+
+{
+    "nome":"David",
+    "email":"davidpontes@gmail.com",
+    "senha":"123456789",
+    "tipo": "ADMINISTRADOR"
+}
+
+### Autenticar Um Usuário Existente a Partir das Credenciais
+POST http://{{host}}:{{port}}/{{apiversion}}/usuarios/autenticacao
+Content-type: application/json
+
+{
+    "email":"davidpontes@gmail.com",
+    "senha":"123456789"
+}
