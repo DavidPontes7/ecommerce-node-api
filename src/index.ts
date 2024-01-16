@@ -66,14 +66,10 @@ async function main() {
     
    
     const categoria01: Categoria = Categoria.recuperar({
-        id: "4198ab9b-3f4e-41fb-a553-541708b31b17",
+        id: "d4ef1fbe-9d54-473b-b41f-ea26a76c2cdd",
         nome: 'Cozinha'
     });    
 
-    const categoria02: Categoria = Categoria.recuperar({
-        id: "fc762da1-8d2c-4ffa-9559-901db94cb92e",
-        nome: 'Banho'
-    })
 
     const produto: Produto = Produto.criar({
         nome:'Pano de Pratro',
